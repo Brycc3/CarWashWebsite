@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Auto Detailing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff; /* White background */
+            padding: 20px 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #e0e0e0;
+            border-radius: 5px;
+        }
+          /* Footer Section */
+          .footer {
+            background: #000000; /* Black background */
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: left;
+            margin-top: 15px;
+        }
+
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .email-form input {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .email-form button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .email-form button:hover {
+            background: darkred;
+        }
+
+        /* Section Layout */
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .gray-section {
+            background: #f3f3f3;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .video-grid video {
+            width: 30%;
+            height: 200px; /* Ensures all videos have the same height */
+            object-fit: cover; /* Ensures uniform aspect ratio */
+            border-radius: 10px;
+        }
+
+        /* Team Layout */
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .team-grid img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        /* Service Pricing Layout */
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service-box {
+            background: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            padding: 15px;
+        }
+        .service-box img {
+            width: 100%;
+            height: 200px; /* Ensures all images are the same height */
+            object-fit: cover; /* Ensures uniform aspect ratio without stretching */
+            border-radius: 10px;
+        }
+
+        .service-box h3, .service-box p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <div class="logo">RefiningAutoDetail</div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+   
+    <!-- Hero Section with Video Carousel -->
+    <section id="home" class="hero">
+        <video id="hero-video" autoplay loop muted playsinline>
+            <source src="videos/vid1.MP4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h1>Refining Auto Detailing</h1>
+            <p>We bring exceptional auto detailing directly to you.</p>
+            <a href="services.html" class="btn">View Services</a>
+        </div>
+    </section>
+
+    <!-- Exceptional Vehicle Detailing Services -->
+    <section class="section" style="text-align: left;">
+        <h2>Exceptional Vehicle Detailing Services</h2>
+        <p>We provide top-tier mobile auto detailing services, ensuring every vehicle shines with perfection.</p>
+        <div class="video-grid">
+            <video autoplay loop muted playsinline>
+                <source src="videos/car1.mp4" type="video/mp4">
+            </video>
+            <video autoplay loop muted playsinline>
+                <source src="videos/car2.mp4" type="video/mp4">
+            </video>
+            <video autoplay loop muted playsinline>
+                <source src="videos/car3.mp4" type="video/mp4">
+            </video>
+        </div>
+    </section>
+
+    <!-- Meet Our Team -->
+    <section class="section">
+        <h2 style="text-align: center;">Meet Our Team</h2>
+        <div class="team-grid">
+            <div>
+                <img src="images/jordan.jpg" alt="Jordan Promise">
+                <p>Jordan Promise</p>
+            </div>
+            <div>
+                <img src="images/chris.jpg" alt="Chris Love">
+                <p>Chris Love</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Commitment Section (Gray Background) -->
+    <section class="gray-section">
+        <h2>Our Commitment to You</h2>
+        <p>We value your time and guarantee a response within 24 hours. Our service ensures excellence, precision, and customer satisfaction in every detail.</p>
+        <div class="service-container">
+            <div class="service-box">
+                <img src="images/exterior.jpg" alt="Exterior Wash">
+                <h3>Purified Wash</h3>
+                <p>Experience a complete exterior and interior cleaning that revitalizes your vehicle and keeps it looking its absolute best.</p>
+                <p><strong>$80</strong></p>
+            </div>
+            <div class="service-box">
+                <img src="images/interior.jpg" alt="Interior Detailing">
+                <h3>Transformed</h3>
+                <p>Thorough cleaning and detailing, complete with professional waxing, for a polished and pristine appearance.</p>
+                <p><strong>$100</strong></p>
+            </div>
+            <div class="service-box">
+                <img src="images/full-detail.jpg" alt="Full Detail Package">
+                <h3>Refined</h3>
+                <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish..</p>
+                <p><strong>$175</strong></p>
+            </div>
+        </div>
+    </section>
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Excellence</h3>
+        <p>Exceptional vehicle detailing with personalized service.</p>
+        <p style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">FOLLOW US!</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/refiningautodetail?igsh=bG1rMnE1MjBtdmQx" target="_blank">
+                <img src="images/Instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+    <div class="footer-column">
+        <h3>Trust</h3>
+        <p><a href="mailto:Refiningautodetailing@gmail.com">Refiningautodetailing@gmail.com</a></p>
+        <p><a href="tel:8328088118">832-808-8118</a></p>
+    </div>
+    <div class="footer-column">
+        <h3>Care</h3>
+        <form class="email-form">
+            <label for="email">Enter Your Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Submit your details</button>
+        </form>
+    </div>
+</footer>
+
+</body>
+</html>
+
