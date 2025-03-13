@@ -6,6 +6,199 @@
     <title>About Us | Refining Auto Detailing</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+        
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff; /* White background */
+            padding: 20px 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #e0e0e0;
+            border-radius: 5px;
+        }
+          /* Footer Section */
+          .footer {
+            background: #000000; /* Black background */
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+        }
+
+        .footer h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: left;
+            margin-top: 15px;
+        }
+
+        .social-icons img {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+
+        .email-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .email-form input {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .email-form button {
+            background: red;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .email-form button:hover {
+            background: darkred;
+        }
+
+        /* Section Layout */
+        .section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .gray-section {
+            background: #f3f3f3;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        /* Video Grid Layout */
+        .video-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .video-grid video {
+            width: 30%;
+            height: 200px; /* Ensures all videos have the same height */
+            object-fit: cover; /* Ensures uniform aspect ratio */
+            border-radius: 10px;
+        }
+
+        /* Team Layout */
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .team-grid img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        /* Service Pricing Layout */
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service-box {
+            background: #ffffff;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            padding: 15px;
+        }
+        .service-box img {
+            width: 100%;
+            height: 200px; /* Ensures all images are the same height */
+            object-fit: cover; /* Ensures uniform aspect ratio without stretching */
+            border-radius: 10px;
+        }
+
+        .service-box h3, .service-box p {
+            margin: 10px 0;
+        }
+    </style>
+    <style>
         .intro {
             display: flex;
             align-items: center;
@@ -130,25 +323,25 @@
     </section>
 
     <!-- We Will Come to You Section -->
-    <section class="location-section">
+    <!-- We Will Come to You Section -->
+<section class="location-section">
+    <div class="location-content">
         <h2>WE WILL COME TO YOU!</h2>
         <p>Located in Beaumont, Texas, we specialize in exceptional vehicle detailing tailored to your needs.</p>
-        <div class="location-container">
-            <div class="location-details">
-                <h3>Location</h3>
-                <p>Beaumont, Texas, USA</p>
-                <h3>Hours</h3>
-                <p>Open 24 HRS</p>
-            </div>
-            <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.488835573989!2d-94.07570228513744!3d30.040064724428024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640912d38caffdf%3A0x4e7177f4a6f6a2c5!2sLamar%20University!5e0!3m2!1sen!2sus!4v1648701317782!5m2!1sen!2sus"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
-            </div>
-        </div>
-    </section>
+        <h3>Location</h3>
+        <p>Beaumont, Texas, USA</p>
+        <h3>Hours</h3>
+        <p>Open 24 HRS</p>
+    </div>
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.488835573989!2d-94.07570228513744!3d30.040064724428024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640912d38caffdf%3A0x4e7177f4a6f6a2c5!2sLamar%20University!5e0!3m2!1sen!2sus!4v1648701317782!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+
     <!-- Footer Section -->
 <!-- Footer Section -->
 <footer class="footer">

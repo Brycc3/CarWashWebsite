@@ -233,3 +233,26 @@ footer {
     width: 150px;
     height: 150px;
 }
+.location-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.location-content {
+    width: 50%;
+    text-align: left; /* Forces the text to be left-aligned */
+}
+
+.map {
+    width: 50%;
+}
+
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
