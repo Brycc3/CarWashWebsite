@@ -195,3 +195,41 @@ footer {
     margin: 0 10px;
     text-decoration: none;
 }
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.hero-image {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Sections */
+.commitment, .team, .story, .why-choose-us, .contact-info {
+    padding: 2rem;
+    text-align: center;
+}
+.commitment {
+    background-color: #f9f9f9;
+}
+.why-choose-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+.why-choose-us li {
+    margin: 0.5rem 0;
+}
+.team-member img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}

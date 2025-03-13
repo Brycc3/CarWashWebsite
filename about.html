@@ -3,30 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Refining Auto Detailing</title>
+    <title>About Us | Refining Auto Detailing</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 2rem;
+        }
+        .intro .left-content, .intro .right-content {
+            width: 30%;
+        }
+        .intro .center-video {
+            width: 20%;
+            max-width: 250px;
+            text-align: center;
+        }
+        .intro .center-video video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            autoplay: true;
+            loop: true;
+            muted: true;
+            playsinline: true;
+        }
+        .commitment {
+            color: black;
+        }
+        .team h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        .team-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .about-info {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            padding: 2rem;
+        }
+        .info-block {
+            width: 30%;
+        }
+        .location-section {
+            text-align: center;
+            padding: 2rem;
+        }
+        .location-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+        .location-details {
+            width: 40%;
+            text-align: left;
+        }
+        .map {
+            width: 50%;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-        </nav>
+    <!-- Page Heading -->
+    <header class="page-header">
+        <h1 class="main-title">Passionate Mobile Detailing Services</h1>
     </header>
 
-    <section class="content-section">
-        <h2>About Us</h2>
-        <p>At Refining Auto Detailing, we bring exceptional auto detailing directly to you. As a mobile detailing company, we specialize in top-tier vehicle care—anytime, anywhere.</p>
-        <p>Our exterior services include a thorough wash and dry, enhanced with a protectant to keep your car cleaner longer. We restore your vehicle’s shine and protect its finish.</p>
-        <h3>Mission Statement</h3>
-        <p>Inspired by Malachi 3:3, “He will sit as a refiner and purifier of silver,” we strive to reflect God’s craftsmanship by refining every car to its best condition.</p>
-        <h3>Vision Statement</h3>
-        <p>Our vision is to be a trusted name in auto detailing, built on faith, service, and transformation—both for our clients and their vehicles.</p>
+    <!-- Intro Section with Side-by-Side Layout -->
+    <section class="intro">
+        <div class="left-content">
+            <h2>We Stand By Our Promise</h2>
+            <p>We take pride in delivering top-tier auto detailing services, prioritizing customer satisfaction through personalized care and clear, timely communication.</p>
+        </div>
+        <div class="center-video">
+            <video autoplay loop muted playsinline>
+                <source src="videos/about-center.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="right-content">
+            <h2>Our Dedication to Excellence</h2>
+            <p>We bring expert detailing services right to your location, ensuring your vehicle receives the attention it deserves. Count on us for a flawless, showroom-quality finish—every time.</p>
+        </div>
     </section>
+
+    <!-- Our Commitment -->
+    <section class="commitment">
+        <h2>Our Commitment to Quality</h2>
+        <p>We arrive at your location, delivering meticulous detailing services. Trust us to treat your vehicle with the care it deserves, ensuring a pristine finish every time.</p>
+    </section>
+
+    <!-- About Refining Auto Detailing -->
+    <section class="team">
+        <h2>About Refining Auto Detailing</h2>
+        <h3>Young, Passionate & Driven!</h3>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="images/chris.jpg" alt="Chris">
+            </div>
+            <div class="team-member">
+                <img src="images/jordan.jpg" alt="Jordan">
+            </div>
+        </div>
+        <h3>Chris & Jordan</h3>
+        <p>Chris and Jordan met at Lamar University, where Chris pursued his passion for theater and dance, while Jordan studied mechanical engineering. Both shared a deep love for cars and a strong faith in Jesus Christ. Their friendship evolved into a shared vision—bringing top-tier auto detailing services to their community with integrity, precision, and a commitment to excellence.</p>
+    </section>
+
+    <!-- We Will Come to You Section -->
+    <section class="location-section">
+        <h2>WE WILL COME TO YOU!</h2>
+        <p>Located in Beaumont, Texas, we specialize in exceptional vehicle detailing tailored to your needs.</p>
+        <div class="location-container">
+            <div class="location-details">
+                <h3>Location</h3>
+                <p>Beaumont, Texas, USA</p>
+                <h3>Hours</h3>
+                <p>Open 24 HRS</p>
+            </div>
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.488835573989!2d-94.07570228513744!3d30.040064724428024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640912d38caffdf%3A0x4e7177f4a6f6a2c5!2sLamar%20University!5e0!3m2!1sen!2sus!4v1648701317782!5m2!1sen!2sus"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+     <!-- Footer Section -->
+     <footer class="footer">
+        <h2>Excellence</h2>
+        <p>Exceptional vehicle detailing with personalized service.</p>
+        <h3>FOLLOW US!</h3>
+        <p>Instagram | Trust</p>
+        <p>Email: Refiningautodetailing@gmail.com</p>
+        <p>Phone: 832-808-8118</p>
+        <h3>Care</h3>
+        <form class="email-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Submit your details</button>
+        </form>
+    </footer>
 </body>
 </html>
+
+
+
+
