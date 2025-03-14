@@ -6,24 +6,15 @@
     <title>Our Services</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-   <style
-    .logo {
-        font-size: 32px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-left: 20px;
-        display: flex;
-        align-items: center;
-        font-family: 'Montserrat', sans-serif;
-        letter-spacing: 2px;
-    }
-    
-    /* Global Styles */
+   <style>
     body {
         margin: 0;
         font-family: 'Montserrat', sans-serif;
-        background-color: #ffffff; /* White background */
+        background-color: #808080; /* Grey background for the middle section */
         color: #000000; /* Black text */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     /* Navigation Bar */
@@ -31,366 +22,115 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: #ffffff; /* White background */
+        background: black; /* Black background for the navigation bar */
         padding: 20px 0;
         z-index: 1000;
         text-align: center;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    .nav-container {
         display: flex;
-        justify-content: center;
-        gap: 30px;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
     }
 
-    nav ul li a {
-        color: #000000;
+    .logo {
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+    }
+
+    nav a {
+        color: white;
         text-decoration: none;
         font-size: 18px;
-        font-weight: 600;
-        padding: 10px 20px;
-        transition: background 0.3s, color 0.3s;
+        position: relative;
     }
 
-    nav ul li a:hover {
-        background: #e0e0e0;
-        border-radius: 5px;
+    .current-page {
+        color: gold;
+        font-weight: bold;
     }
-      /* Footer Section */
-      .footer {
-        background: #000000; /* Black background */
-        color: white;
-        padding: 60px 40px;
+
+    .content {
+        flex: 1; /* Pushes the footer down */
+        padding-top: 100px; /* Prevents content from being hidden under the navbar */
+    }
+
+    .services-section {
+        background-color: #808080; /* Grey background for the services */
+        padding: 50px 20px;
+    }
+
+    .services-container {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        flex-wrap: wrap;
-        text-align: left;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
     }
 
-    .footer-column {
-        flex: 1;
-        min-width: 280px;
-        padding: 20px;
-    }
-
-    .footer h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    .footer p, .footer a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    .footer a:hover {
-        text-decoration: underline;
-    }
-
-    .social-icons {
-        display: flex;
-        justify-content: left;
-        margin-top: 15px;
-    }
-
-    .social-icons img {
-        width: 25px;
-        height: 25px;
-        margin-right: 10px;
-    }
-
-    .email-form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .email-form input {
-        padding: 12px;
-        font-size: 16px;
-        width: 100%;
-        border: none;
-        border-radius: 5px;
-    }
-
-    .email-form button {
-        background: red;
-        color: white;
-        border: none;
-        padding: 12px;
-        font-size: 16px;
-        border-radius: 5px;
+    .service-card {
+        width: 30%;
+        text-align: center;
         cursor: pointer;
     }
 
-    .email-form button:hover {
-        background: darkred;
+    .service-card video {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        autoplay: true;
+        muted: true;
+        loop: true;
+        playsinline: true;
     }
 
-    /* Section Layout */
-    .section {
-        max-width: 1200px;
+    .addons {
+        display: flex;
+        justify-content: space-between;
+        max-width: 800px;
         margin: 50px auto;
-        padding: 20px;
+        flex-wrap: wrap;
     }
 
-    .gray-section {
-        background: #f3f3f3;
-        padding: 50px 20px;
-        text-align: center;
-    }
-
-    /* Video Grid Layout */
-    .video-grid {
+    .addon-group {
         display: flex;
-        justify-content: space-around;
-        margin-top: 20px;
-    }
-
-    .video-grid video {
+        flex-direction: column;
         width: 30%;
-        height: 200px; /* Ensures all videos have the same height */
-        object-fit: cover; /* Ensures uniform aspect ratio */
-        border-radius: 10px;
+        text-align: left;
     }
 
-    /* Team Layout */
-    .team-grid {
+    .addon-item {
         display: flex;
-        justify-content: center;
-        gap: 50px;
+        justify-content: space-between;
     }
 
-    .team-grid img {
-        width: 250px;
-        border-radius: 10px;
-    }
-
-    /* Service Pricing Layout */
-    .service-container {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .service-box {
-        background: #ffffff;
-        border-radius: 10px;
+    /* Footer */
+    .footer {
+        background: black;
+        color: white;
+        padding: 60px 20px;
         text-align: center;
-        width: 250px;
-        padding: 15px;
-    }
-    .service-box img {
         width: 100%;
-        height: 200px; /* Ensures all images are the same height */
-        object-fit: cover; /* Ensures uniform aspect ratio without stretching */
-        border-radius: 10px;
-    }
-
-    .service-box h3, .service-box p {
-        margin: 10px 0;
+        position: relative; /* Ensures it stays at the bottom */
+        margin-top: auto;
     }
 </style>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #808080;
-        }
-        nav {
-            background: black;
-            padding: 20px 0;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-        .nav-container {
-            display: flex;
-            width: 80%;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-        }
-        .logo {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            position: relative;
-        }
-        .current-page {
-            color: gold;
-            font-weight: bold;
-        }
-        .services-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 150px auto 50px auto;
-            padding: 0 20px;
-        }
-        .service-card {
-            width: 30%;
-            text-align: center;
-            cursor: pointer;
-        }
-        .service-card video {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            autoplay: true;
-            muted: true;
-            loop: true;
-            playsinline: true;
-        }
-        .addons {
-            display: flex;
-            justify-content: space-between;
-            max-width: 800px;
-            margin: 50px auto;
-            flex-wrap: wrap;
-        }
-        .addon-group {
-            display: flex;
-            flex-direction: column;
-            width: 30%;
-            text-align: left;
-        }
-        .addon-item {
-            display: flex;
-            justify-content: space-between;
-        }
-        .footer {
-            background: black;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .footer-content {
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        .footer-section {
-            width: 30%;
-            text-align: left;
-        }
-        .footer-section h3 {
-            margin-bottom: 15px;
-        }
-        .footer-section p, .footer-section a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
-    <style>
-        .intro {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            text-align: left;
-            padding: 2rem;
-        }
-        .intro .left-content, .intro .right-content {
-            width: 30%;
-        }
-        .intro .center-video {
-            width: 20%;
-            max-width: 250px;
-            text-align: center;
-        }
-        .intro .center-video video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 10px;
-            autoplay: true;
-            loop: true;
-            muted: true;
-            playsinline: true;
-        }
-        .commitment {
-            color: black;
-        }
-        .team h2 {
-            font-size: 1.5rem;
-            color: #333;
-        }
-        .team-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-        }
-        .team-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-        .about-info {
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            padding: 2rem;
-        }
-        .info-block {
-            width: 30%;
-        }
-        .location-section {
-            text-align: center;
-            padding: 2rem;
-        }
-        .location-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem;
-        }
-        .location-details {
-            width: 40%;
-            text-align: left;
-        }
-        .map {
-            width: 50%;
-        }
-        .map iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-            border-radius: 10px;
-        }
-    </style>
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">RefiningAutoDetail</div>
@@ -405,72 +145,66 @@
         </div>
     </nav>
     
-    <section class="services-container">
-        <div class="service-card" onclick="showDetails('purified')">
-            <video autoplay muted loop playsinline>
-                <source src="videos/purified.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h2>Purified Wash (Basic) - $80</h2>
-        </div>
-        <div class="service-card" onclick="showDetails('transformed')">
-            <video autoplay muted loop playsinline>
-                <source src="videos/transformed.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h2>Transformed (Most Popular) - $100</h2>
-        </div>
-        <div class="service-card" onclick="showDetails('full-detail')">
-            <video autoplay muted loop playsinline>
-                <source src="videos/full-detail.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h2>Full Detail Package Refined - $175</h2>
-        </div>
-    </section>
-    
-    <section class="addons">
-        <div class="addon-group">
-            <div class="addon-item"><span>Pet Hair Removal</span><span>$25</span></div>
-            <div class="addon-item"><span>Odor Treatment</span><span>$40</span></div>
-        </div>
-        <div class="addon-group">
-            <div class="addon-item"><span>Floor Mat Restoration</span><span>$20</span></div>
-            <div class="addon-item"><span>Engine Bay Detail</span><span>$50</span></div>
-        </div>
-        <div class="addon-group">
-            <div class="addon-item"><span>Headlight Restoration</span><span>$40</span></div>
-        </div>
-    </section>
-    
-   <!-- Footer Section -->
-<footer class="footer">
-    <div class="footer-column">
-        <h3>Excellence</h3>
-        <p>Exceptional vehicle detailing with personalized service.</p>
-        <p style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">FOLLOW US!</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/refiningautodetail?igsh=bG1rMnE1MjBtdmQx" target="_blank">
-                <img src="images/Instagram-icon.png" alt="Instagram">
-            </a>
-        </div>
+    <!-- Content Wrapper -->
+    <div class="content">
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="services-container">
+                <div class="service-card" onclick="showDetails('purified')">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/purified.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>Purified Wash (Basic) - $80</h2>
+                </div>
+                <div class="service-card" onclick="showDetails('transformed')">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/transformed.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>Transformed (Most Popular) - $100</h2>
+                </div>
+                <div class="service-card" onclick="showDetails('full-detail')">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/full-detail.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>Full Detail Package Refined - $175</h2>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="footer-column">
-        <h3>Trust</h3>
-        <p><a href="mailto:Refiningautodetailing@gmail.com">Refiningautodetailing@gmail.com</a></p>
-        <p><a href="tel:8328088118">832-808-8118</a></p>
-    </div>
-    <div class="footer-column">
-        <h3>Care</h3>
-        <form class="email-form">
-            <label for="email">Enter Your Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Submit your details</button>
-        </form>
-    </div>
-</footer>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Excellence</h3>
+            <p>Exceptional vehicle detailing with personalized service.</p>
+            <p style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">FOLLOW US!</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/refiningautodetail?igsh=bG1rMnE1MjBtdmQx" target="_blank">
+                    <img src="images/Instagram-icon.png" alt="Instagram">
+                </a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Trust</h3>
+            <p><a href="mailto:Refiningautodetailing@gmail.com">Refiningautodetailing@gmail.com</a></p>
+            <p><a href="tel:8328088118">832-808-8118</a></p>
+        </div>
+        <div class="footer-column">
+            <h3>Care</h3>
+            <form class="email-form">
+                <label for="email">Enter Your Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Submit your details</button>
+            </form>
+        </div>
+    </footer>
 </body>
 </html>
+
+
 
 
 
