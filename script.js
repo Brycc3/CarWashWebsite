@@ -93,5 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
+function toggleDetails(id) {
+    const allDetails = document.querySelectorAll('.service-details');
+    allDetails.forEach(detail => {
+      if (detail.id === id) {
+        detail.style.display = detail.style.display === 'flex' ? 'none' : 'flex';
+      } else {
+        detail.style.display = 'none';
+      }
+    });
+  }
+  
 
