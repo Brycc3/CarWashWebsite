@@ -475,18 +475,16 @@ body {
 
 /* Footer Styling */
 .footer {
-    background: black;
-    color: white;
-    padding: 60px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    text-align: left;
+    justify-content: flex-start; /* Aligns content to the left */
+    align-items: center; /* Centers items vertically */
+    padding: 20px;
+    background-color: #000; /* Adjust to your footer's background color */
     width: 100%;
     position: relative;
-    margin-top: auto; /* Makes sure the footer stays at the bottom */
+    margin-top: auto;
 }
+
 
 
 .footer-column {
