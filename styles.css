@@ -536,6 +536,35 @@ h3 {
     background: darkred;
 }
 
+/* Ensure the entire viewport is used */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure content takes available space and pushes footer down */
+.content {
+    flex-grow: 1;
+}
+
+/* Footer Styling */
+.footer {
+    background: black;
+    color: white;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Ensures footer stays at the bottom */
+}
 
 
 
