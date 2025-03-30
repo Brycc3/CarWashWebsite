@@ -557,14 +557,13 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
 }
 
 /* Ensure content takes available space and pushes footer down */
 .content {
-    flex-grow: 1;
+    flex-grow: 1; /* This allows the content section to expand and push the footer down */
 }
 
 /* Footer Styling */
@@ -579,7 +578,6 @@ html, body {
     text-align: left;
     width: 100%;
     position: relative;
-    margin-top: auto; /* Ensures footer stays at the bottom */
 }
 
 
