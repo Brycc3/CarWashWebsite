@@ -25,41 +25,6 @@
             background-color: #ffffff; /* White background */
             color: #000000; /* Black text */
         }
-
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffff; /* White background */
-            padding: 20px 0;
-            z-index: 1000;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: #000000;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            padding: 10px 20px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        nav ul li a:hover {
-            background: #e0e0e0;
-            border-radius: 5px;
-        }
           /* Footer Section */
           .footer {
             background: #000000; /* Black background */
@@ -201,22 +166,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <div class="logo">RefiningAutoDetail</div>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="faqs.html">FAQs</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-   
     <!-- Hero Section with Video Carousel -->
     <section id="home" class="hero">
         <video id="hero-video" autoplay loop muted playsinline>
@@ -286,33 +235,28 @@
             </div>
         </div>
     </section>
-<!-- Footer Section -->
-<!-- Footer Section -->
-<footer class="footer">
-    <div class="footer-column">
-        <h3>Excellence</h3>
-        <p>Exceptional vehicle detailing with personalized service.</p>
-        <p style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">FOLLOW US!</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/refiningautodetail?igsh=bG1rMnE1MjBtdmQx" target="_blank">
-                <img src="images/Instagram-icon.png" alt="Instagram">
-            </a>
-        </div>
-    </div>
-    <div class="footer-column">
-        <h3>Trust</h3>
-        <p><a href="mailto:Refiningautodetailing@gmail.com">Refiningautodetailing@gmail.com</a></p>
-        <p><a href="tel:8328088118">832-808-8118</a></p>
-    </div>
-    <div class="footer-column">
-        <h3>Care</h3>
-        <form class="email-form">
-            <label for="email">Enter Your Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-            <button type="submit">Submit your details</button>
-        </form>
-    </div>
-</footer>
+<!-- Include Header -->
+<div id="header-placeholder"></div>
+
+<script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("header-placeholder").innerHTML = data;
+        });
+</script>
+<!-- Include Footer -->
+<div id="footer-placeholder"></div>
+
+<script>
+    // This script will dynamically load the footer from footer.html
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        });
+</script>
+
 
 </body>
 </html>
