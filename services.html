@@ -28,15 +28,18 @@
         
           /* Footer Section */
           .footer {
-            background: #000000; /* Black background */
+            background: black;
             color: white;
-            padding: 60px 40px;
+            padding: 60px 20px;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
             text-align: left;
+            width: 100%;
+            margin-top: auto; /* Makes sure the footer stays at the bottom */
         }
+        
 
         .footer-column {
             flex: 1;
@@ -406,93 +409,52 @@
                 document.getElementById("header-placeholder").innerHTML = data;
             });
     </script>
-    
-    <!-- Content Wrapper -->
-    <div class="content"> <!-- This is essential -->
-        <!-- Your services section goes here -->
-        <section class="services-section">
-            <div class="services-videos-container" id="servicesContainer">
-                <!-- Your service videos and cards here -->
-            </div>
-        </section>
-    </div> <!-- End of content div -->
+
+    <!-- Main Content Wrapper -->
+    <div class="content"> <!-- This is important to push footer down -->
+        
         <!-- Services Section -->
-        <section class="services-header">
-            <div class="header-left">
-                <p>3 Services</p>
-            </div>
-            <div class="header-right">
-                <label for="sort-menu">Sort By:</label>
-                <select id="sort-menu" onchange="sortServices()">
-                    <option value="default">Most Recent</option>
-                    <option value="low-to-high">Low to High</option>
-                    <option value="high-to-low">High to Low</option>
-                </select>
-            </div>
-        </section>
-        <! Services Section -->
         <section class="services-section">
-            <div class="services-videos-container" id="servicesContainer">
-                <!-- Purified Wash (Basic) -->
-                <a class="video" href="purified.html" data-price="80">
-                    <div class="video-wrapper">
-                        <video autoplay muted loop playsinline>
-                            <source src="Videos/purified.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+            <div class="services-row">
+                <!-- Purified Wash Card -->
+                <a class="service-card" href="purified.html">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/purified.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <h3>Purified Wash (Basic) - $80</h3>
                 </a>
         
-                <!-- Transformed (Most Popular) -->
-                <a class="video" href="transformed.html" data-price="100">
-                    <div class="video-wrapper">
-                        <video autoplay muted loop playsinline>
-                            <source src="Videos/transformed.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+                <!-- Transformed Card -->
+                <a class="service-card" href="transformed.html">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/transformed.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <h3>Transformed (Most Popular) - $100</h3>
                 </a>
         
-                <!-- Full Detail Package Refined -->
-                <a class="video" href="full-detail.html" data-price="175">
-                    <div class="video-wrapper">
-                        <video autoplay muted loop playsinline>
-                            <source src="Videos/full-detail.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <h3>Full Detail
-        
-        
-        
-    </div>
-
-    <!-- Main Content Wrapper (VERY IMPORTANT) -->
-    <div class="content"> <!-- Add this line -->
-        <!-- Services Section -->
-        <section class="services-section">
-            <div class="services-videos-container" id="servicesContainer">
-                <!-- Your service videos and cards here -->
+                <!-- Refined Card -->
+                <a class="service-card" href="refined.html">
+                    <video autoplay muted loop playsinline>
+                        <source src="videos/full-detail.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Full Detail Package Refined - $175</h3>
+                </a>
             </div>
         </section>
-    </div> <!-- Close the .content div here -->
+    </div>
 
     <!-- Include Footer -->
     <div id="footer-placeholder"></div>
-    
     <script>
-        // This script will dynamically load the footer from footer.html
         fetch("footer.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("footer-placeholder").innerHTML = data;
             });
     </script>
-    
 </body>
-
-
-
+</html>
 
