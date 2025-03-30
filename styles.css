@@ -371,5 +371,21 @@ footer {
     padding-left: 20px;
     margin-bottom: 20px;
   }
-  
+  .services-videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts spacing between videos */
+    gap: 20px; /* Adds space between rows if videos wrap */
+}
+
+.video {
+    flex: 1 1 45%; /* Adjusts the width of each video div */
+    max-width: 45%; /* Ensures videos don't exceed 45% of the container width */
+}
+
+video {
+    width: 100%; /* Makes the video responsive within its container */
+    height: auto;
+}
+
   

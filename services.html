@@ -162,6 +162,26 @@
             border-radius: 10px;
         }
 
+        <div class="services-videos-container">
+            <div class="video">
+                <video controls>
+                    <source src="Videos/purified.mp4" type="purified/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="Videos/transformed.mp4" type="transformed/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="video">
+            <video controls>
+                <source src="Videos/full-detail.mp4" type="full-detail/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         /* Team Layout */
         .team-grid {
             display: flex;
@@ -348,8 +368,9 @@
         position: relative; /* Ensures it stays at the bottom */
         margin-top: auto;
     }
-    <<section class="services-section">
+    <section class="services-section">
         <div class="services-row">
+            <!-- Purified Wash Card -->
             <a class="service-card" href="purified.html">
                 <video autoplay muted loop>
                     <source src="videos/purified.mp4" type="video/mp4">
@@ -358,6 +379,7 @@
                 <h3>Purified Wash (Basic) - $80</h3>
             </a>
     
+            <!-- Transformed Card -->
             <a class="service-card" href="transformed.html">
                 <video autoplay muted loop>
                     <source src="videos/transformed.mp4" type="video/mp4">
@@ -366,8 +388,12 @@
                 <h3>Transformed (Most Popular) - $100</h3>
             </a>
     
+            <!-- Refined Card -->
             <a class="service-card" href="refined.html">
-                <img src="images/refined.jpg" alt="Full Detail Package Refined">
+                <video autoplay muted loop>
+                    <source src="videos/refined.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <h3>Full Detail Package Refined - $175</h3>
             </a>
         </div>
