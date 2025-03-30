@@ -288,14 +288,15 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 48%; /* Increase width for larger cards */
+    width: 33%; /* Slightly wider to fit 3 cards comfortably */
+    min-width: 470px; /* Ensures the video fits without shrinking */
     text-align: center;
-    border: none;
+    border: 1px solid #ccc; /* Optional: keep or remove based on your design */
     padding: 15px;
     text-decoration: none;
     color: inherit;
+    box-sizing: border-box;
     transition: transform 0.2s;
-    background-color: transparent;
 }
 
 .service-card:hover {
@@ -322,17 +323,19 @@ footer {
 /* Responsive Adjustment */
 @media (max-width: 1200px) {
     .service-card {
-        width: 48%;
+        width: 48%; /* 2 cards per row */
+        min-width: 470px;
     }
 }
 
 @media (max-width: 768px) {
     .service-card {
-        width: 100%;
+        width: 100%; /* 1 card per row */
+        min-width: unset; /* Remove min-width on small screens */
     }
-
     .service-card video {
-        height: 250px;
+        width: 100%; /* Full width of the card */
+        height: 250px; /* Slightly smaller height for mobile */
     }
 }
 
@@ -718,14 +721,13 @@ body {
 
 /* Video Styling */
 .service-card video {
-    width: 350px; /* Make the videos a bit bigger */
-    height: 300px;
-    border: none; /* Remove white border */
-    background-color: black; /* Add a black background if needed */
+    width: 450px; /* Wider for a rectangular look */
+    height: 300px; /* Tall enough but not overwhelming */
+    border: none;
+    background-color: black;
     border-radius: 10px;
     object-fit: cover;
 }
-
 
 
   
