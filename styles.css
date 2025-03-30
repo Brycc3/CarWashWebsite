@@ -460,6 +460,19 @@ h3 {
         height: 250px;
     }
 }
+/* Apply Flexbox to Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Takes full viewport height */
+    margin: 0;
+}
+
+/* Allow Main Content to Expand and Push Footer Down */
+.content {
+    flex-grow: 1; /* Ensures the content area expands to push footer down */
+}
+
 /* Footer Styling */
 .footer {
     background: black;
@@ -471,7 +484,10 @@ h3 {
     flex-wrap: wrap;
     text-align: left;
     width: 100%;
+    position: relative;
+    margin-top: auto; /* Makes sure the footer stays at the bottom */
 }
+
 
 .footer-column {
     flex: 1;
