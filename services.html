@@ -26,8 +26,6 @@
             color: #000000; /* Black text */
         }
         
-          
-
         /* Section Layout */
         .section {
             max-width: 1200px;
@@ -55,26 +53,6 @@
             border-radius: 10px;
         }
 
-        <div class="services-videos-container">
-            <div class="video">
-                <video controls>
-                    <source src="Videos/purified.mp4" type="purified/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video">
-                <video controls>
-                    <source src="Videos/transformed.mp4" type="transformed/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-        <div class="video">
-            <video controls>
-                <source src="Videos/full-detail.mp4" type="full-detail/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
         /* Team Layout */
         .team-grid {
             display: flex;
@@ -111,209 +89,145 @@
         .service-box h3, .service-box p {
             margin: 10px 0;
         }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #808080; /* Grey background for the middle section */
+            color: #000000; /* Black text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: black; /* Black background for the navigation bar */
+            padding: 20px 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .current-page {
+            color: gold;
+            font-weight: bold;
+        }
+
+        .content {
+            flex: 1; /* Pushes the footer down */
+            padding-top: 100px; /* Prevents content from being hidden under the navbar */
+        }
+
+        .services-section {
+            background-color: #808080; /* Grey background for the services */
+            padding: 50px 20px;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Services Row */
+        .services-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+
+        /* Service Card */
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 32%; /* Adjusted to fit more cleanly */
+            text-align: center;
+            border: none; /* Removed white border */
+            padding: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s;
+            background-color: transparent; /* To avoid the white box */
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .addons {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 50px auto;
+            flex-wrap: wrap;
+        }
+
+        .addon-group {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            text-align: left;
+        }
+
+        .addon-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Footer */
+        .footer {
+            background: black;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            width: 100%;
+            position: relative; /* Ensures it stays at the bottom */
+            margin-top: auto;
+        }
     </style>
-    <style>
-    body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        background-color: #808080; /* Grey background for the middle section */
-        color: #000000; /* Black text */
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    /* Navigation Bar */
-    nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: black; /* Black background for the navigation bar */
-        padding: 20px 0;
-        z-index: 1000;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-container {
-        display: flex;
-        width: 80%;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .logo {
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 25px;
-    }
-
-    nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        position: relative;
-    }
-
-    .current-page {
-        color: gold;
-        font-weight: bold;
-    }
-
-    .content {
-        flex: 1; /* Pushes the footer down */
-        padding-top: 100px; /* Prevents content from being hidden under the navbar */
-    }
-
-    .services-section {
-        background-color: #808080; /* Grey background for the services */
-        padding: 50px 20px;
-    }
-
-    .services-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        max-width: 1200px;
-        margin: 50px auto;
-        padding: 0 20px;
-    }
-
-    /* Services Row */
-.services-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 30px;
-}
-
-/* Service Card */
-.service-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 32%; /* Adjusted to fit more cleanly */
-    text-align: center;
-    border: none; /* Removed white border */
-    padding: 10px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s;
-    background-color: transparent; /* To avoid the white box */
-}
-
-.service-card:hover {
-    transform: scale(1.05);
-}
-
-      
-      .service-card img {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-      }
-      
-      
-
-    .addons {
-        display: flex;
-        justify-content: space-between;
-        max-width: 800px;
-        margin: 50px auto;
-        flex-wrap: wrap;
-    }
-
-    .addon-group {
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        text-align: left;
-    }
-
-    .addon-item {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    /* Footer */
-    .footer {
-        background: black;
-        color: white;
-        padding: 60px 20px;
-        text-align: center;
-        width: 100%;
-        position: relative; /* Ensures it stays at the bottom */
-        margin-top: auto;
-    }
-    <section class="services-section">
-        <div class="services-row">
-            <!-- Purified Wash Card -->
-            <a class="service-card" href="purified.html">
-                <video autoplay muted loop>
-                    <source src="videos/purified.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <h3>Purified Wash (Basic) - $80</h3>
-            </a>
-    
-            <!-- Transformed Card -->
-            <a class="service-card" href="transformed.html">
-                <video autoplay muted loop>
-                    <source src="videos/transformed.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <h3>Transformed (Most Popular) - $100</h3>
-            </a>
-    
-            <!-- Refined Card -->
-            <a class="service-card" href="refined.html">
-                <video autoplay muted loop>
-                    <source src="videos/refined.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <h3>Full Detail Package Refined - $175</h3>
-            </a>
-        </div>
-    </section>
-    
-      
-        <div id="refined" class="service-details">
-          <img src="images/refined.jpg" alt="Full Detail Package Refined">
-          <div class="service-text">
-            <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish.</p>
-            <ul>
-              <li>Transformed detailing package included</li>
-              <li>Water spot removal</li>
-              <li>Carpet and upholstery shampooing</li>
-              <li>Leather conditioning and treatment</li>
-            </ul>
-          </div>
-        </div>
-      
-        <div class="addons-section">
-          <div class="addon-column">
-            <p>Pet Hair Removal - $25</p>
-            <p>Odor Treatment - $40</p>
-          </div>
-          <div class="addon-column">
-            <p>Floor Mat Restoration - $20</p>
-            <p>Engine Bay Detail - $50</p>
-          </div>
-          <div class="addon-column">
-            <p>Headlight Restoration - $40</p>
-          </div>
-        </div>
-      </section>
-      
-</style>
 </head>
 <body>
     <!-- Include Header -->
@@ -351,7 +265,7 @@
                 </a>
         
                 <!-- Refined Card -->
-                <a class="service-card" href="refined.html">
+                <a class="service-card" href="full-detail.html">
                     <video autoplay muted loop playsinline>
                         <source src="videos/full-detail.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -373,4 +287,3 @@
     </script>
 </body>
 </html>
-
