@@ -1,24 +1,206 @@
-<!-- Include Header -->
-<div id="header-placeholder"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book - Refining Auto Detailing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .content {
+            flex-grow: 1;
+        }
+        .contact-section {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .contact-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-info p {
+            margin: 10px 0;
+            color: #000000;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .video-container video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .location-section {
+            margin-top: 30px;
+        }
+        .location-section h2 {
+            color: #333;
+        }
+        .map iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .checkboxes label {
+            display: block;
+            margin: 10px 0;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .contact-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
+    </script>
 
-<script>
-    // This script will dynamically load the header from header.html
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-        });
-</script>
+    <!-- Contact Section -->
+    <div class="content">
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-content">
+                    <!-- Contact Info (Left Side) -->
+                    <div class="contact-info">
+                        <p>We value your feedback and time. Reach out for personalized service, exceptional results or if you have any questions today!</p>
+                        <p>662-616-1502</p>
+                        <p>Refiningautodetailing@gmail.com</p>
+                        <p>refiningautodetailing</p>
+                        <p>Opening Hours: 5AM-6:00PM</p>
 
+                        <!-- Video Background Section -->
+                        <div class="video-container">
+                            <video autoplay loop muted playsinline>
+                                <source src="videos/random-video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
 
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
+                        <!-- We Will Come to You -->
+                        <div class="location-section">
+                            <h2>WE WILL COME TO YOU!</h2>
+                            <p>Located in Beaumont, Texas, we specialize in exceptional vehicle detailing tailored to your needs.</p>
+                            <div class="map">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.488835573989!2d-94.07570228513744!3d30.040064724428024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x863eb43f2e8b8c61%3A0x9e8e8f7e8f7e8f7e!2s4400%20S%20M%20L%20King%20Jr%20Pkwy%2C%20Beaumont%2C%20TX%2077705!5e0!3m2!1sen!2sus!4v1698765432109!5m2!1sen!2sus"
+                                    allowfullscreen=""
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                            <p><strong>Location:</strong> Beaumont, TX</p>
+                            <p><strong>Hours:</strong> Open 5AM-6PM</p>
+                        </div>
+                    </div>
 
-<script>
-    // This script will dynamically load the footer from footer.html
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
+                    <!-- Contact Form (Right Side) -->
+                    <div class="contact-form">
+                        <form action="mailto:Refiningautodetailing@gmail.com" method="POST" enctype="text/plain">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="First Name & Last Name*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone Number*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="location" placeholder="Location*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="vehicle" placeholder="Vehicle Model*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="dirtiness" placeholder="How Dirty is the vehicle from 1-10?*" required>
+                            </div>
+                            <div class="form-group checkboxes">
+                                <p>Check the ones that Apply to you:</p>
+                                <label><input type="checkbox" name="pet_hair" value="Pet Hair in vehicle"> Pet Hair in vehicle</label>
+                                <label><input type="checkbox" name="kids" value="Have Kids frequently entering the vehicle"> Have Kids frequently entering the vehicle</label>
+                                <label><input type="checkbox" name="sand" value="Have Sand in vehicle"> Have Sand in vehicle</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="service" placeholder="Desired Service*" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Submit Your Quote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
+</body>
+</html>

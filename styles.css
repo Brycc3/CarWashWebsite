@@ -283,21 +283,6 @@ footer {
     padding: 30px;
 }
 
-/* Service Card */
-.service-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33%; /* Slightly wider to fit 3 cards comfortably */
-    min-width: 470px; /* Ensures the video fits without shrinking */
-    text-align: center;
-    border: 1px solid #ccc; /* Optional: keep or remove based on your design */
-    padding: 15px;
-    text-decoration: none;
-    color: inherit;
-    box-sizing: border-box;
-    transition: transform 0.2s;
-}
 
 .service-card:hover {
     transform: scale(1.05);
@@ -323,19 +308,17 @@ footer {
 /* Responsive Adjustment */
 @media (max-width: 1200px) {
     .service-card {
-        width: 48%; /* 2 cards per row */
-        min-width: 470px;
+        width: 48%;
     }
 }
 
 @media (max-width: 768px) {
     .service-card {
-        width: 100%; /* 1 card per row */
-        min-width: unset; /* Remove min-width on small screens */
+        width: 100%;
     }
+
     .service-card video {
-        width: 100%; /* Full width of the card */
-        height: 250px; /* Slightly smaller height for mobile */
+        height: 250px;
     }
 }
 

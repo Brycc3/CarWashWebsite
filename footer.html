@@ -1,14 +1,13 @@
 <!-- footer.html -->
 <footer class="footer">
     <div class="footer-content">
-        
         <!-- Far Left Column -->
         <div class="footer-column">
             <h3>Excellence</h3>
             <p>Exceptional vehicle detailing with personalized service.</p>
             <h4>Follow Us!</h4>
             <div class="social-icons">
-                <a href="https://www.instagram.com/refiningautodetail?igsh=bG1rMnE1MjBtdmQx" target="_blank">
+                <a href="https://www.instagram.com/refiningautodetailing?igsh=bG1rMnE1MjBtdmQx" target="_blank">
                     <img src="images/Instagram-icon.png" alt="Instagram">
                 </a>
             </div>
@@ -18,7 +17,7 @@
         <div class="footer-column">
             <h3>Trust</h3>
             <p><a href="mailto:Refiningautodetailing@gmail.com">Refiningautodetailing@gmail.com</a></p>
-            <p><a href="tel:8328088118">832-808-8118</a></p>
+            <p><a href="tel:6626161502">662-616-1502</a></p>
         </div>
 
         <!-- Far Right Column -->
@@ -33,4 +32,79 @@
     </div>
 </footer>
 
-
+<style>
+    .footer {
+        background: #000000;
+        color: white;
+        padding: 60px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .footer-content {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .footer-column {
+        flex: 1;
+        min-width: 280px;
+        padding: 20px;
+    }
+    .footer h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    .footer p, .footer a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: left;
+        margin-top: 15px;
+    }
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+    .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .email-form input {
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+    }
+    .email-form button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .email-form button:hover {
+        background: darkred;
+    }
+</style>

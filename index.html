@@ -25,81 +25,7 @@
             background-color: #ffffff; /* White background */
             color: #000000; /* Black text */
         }
-          /* Footer Section */
-          .footer {
-            background: #000000; /* Black background */
-            color: white;
-            padding: 60px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            text-align: left;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 280px;
-            padding: 20px;
-        }
-
-        .footer h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
-        .footer p, .footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: left;
-            margin-top: 15px;
-        }
-
-        .social-icons img {
-            width: 25px;
-            height: 25px;
-            margin-right: 10px;
-        }
-
-        .email-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-        }
-
-        .email-form input {
-            padding: 12px;
-            font-size: 16px;
-            width: 100%;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .email-form button {
-            background: red;
-            color: white;
-            border: none;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .email-form button:hover {
-            background: darkred;
-        }
-
+        
         /* Section Layout */
         .section {
             max-width: 1200px;
@@ -163,6 +89,26 @@
         .service-box h3, .service-box p {
             margin: 10px 0;
         }
+
+        /* View Services Button */
+        .view-services-btn {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 15px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .view-services-btn:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 <body>
@@ -194,6 +140,9 @@
             </video>
         </div>
     </section>
+
+    <!-- View Services Button -->
+    <a href="services.html" class="view-services-btn">View Services</a>
 
     <!-- Meet Our Team -->
     <section class="section">
@@ -230,34 +179,30 @@
             <div class="service-box">
                 <img src="images/full-detail.jpg" alt="Full Detail Package">
                 <h3>Refined</h3>
-                <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish..</p>
+                <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish.</p>
                 <p><strong>$175</strong></p>
             </div>
         </div>
     </section>
-<!-- Include Header -->
-<div id="header-placeholder"></div>
 
-<script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-        });
-</script>
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
+    </script>
 
-<script>
-    // This script will dynamically load the footer from footer.html
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
-
-
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
 </body>
 </html>
-

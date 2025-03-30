@@ -103,31 +103,5 @@ function toggleDetails(id) {
       }
     });
   }
-  // Sorting Functionality
-function sortServices() {
-    const container = document.getElementById('servicesContainer');
-    const services = Array.from(container.getElementsByClassName('video'));
-    const sortOption = document.getElementById('sort-menu').value;
-
-    if (sortOption === 'low-to-high') {
-        services.sort((a, b) => parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price')));
-    } else if (sortOption === 'high-to-low') {
-        services.sort((a, b) => parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price')));
-    } else {
-        // Most recent (default order in HTML)
-        services.sort((a, b) => {
-            return a.dataset.clickTime ? -1 : 1;
-        });
-    }
-
-    services.forEach(service => container.appendChild(service));
-}
-
-// Track Most Recent Click
-document.querySelectorAll('.video').forEach(video => {
-    video.addEventListener('click', () => {
-        video.setAttribute('data-clickTime', new Date().getTime());
-    });
-});
-
+  
 

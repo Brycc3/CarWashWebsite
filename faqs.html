@@ -1,24 +1,280 @@
-<!-- Include Header -->
-<div id="header-placeholder"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Refining Auto Detailing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .content {
+            flex-grow: 1;
+        }
+        .hero-section {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hero-overlay h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .hero-overlay p {
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+        .faq-section {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .faq-section h2 {
+            text-align: center;
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .faq-intro {
+            text-align: center;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        .faq-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .faq-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        .faq-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .faq-questions {
+            flex: 2;
+            min-width: 300px;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+        }
+        .faq-item h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            color: #666;
+            font-size: 16px;
+        }
+        .promotions-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+        }
+        .promotions-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .promotion-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .promotion-image {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .promotion-item h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .promotion-item p {
+            color: #666;
+            font-size: 16px;
+            margin: 0;
+        }
+        .referral-section {
+            position: relative;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+        .referral-content {
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .faq-content {
+                flex-direction: column;
+            }
+            .promotions-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .hero-section {
+                height: 300px;
+            }
+            .hero-overlay h1 {
+                font-size: 24px;
+            }
+            .hero-overlay p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
+    </script>
 
-<script>
-    // This script will dynamically load the header from header.html
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-        });
-</script>
+    <!-- Content -->
+    <div class="content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="images/exterior.jpg" alt="Car Exterior" class="hero-image">
+            <div class="hero-overlay">
+                <h1>Exceptional Vehicle Detailing</h1>
+                <p>Personalized service, dedicated team, and exceptional results for all your vehicle detailing needs.</p>
+            </div>
+        </section>
 
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2>F A Q</h2>
+                <p class="faq-intro">We provide personalized detailing services for all vehicle types in Beaumont, Texas.</p>
+                <div class="faq-content">
+                    <div class="faq-image">
+                        <img src="images/full-detail.jpg" alt="Full Detail Interior">
+                    </div>
+                    <div class="faq-questions">
+                        <div class="faq-item">
+                            <h3>Do I need to provide water & Electricity?</h3>
+                            <p>Our mobile team comes fully equipped with our own water supply and portable sources.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can mobile detailing be done in any location?</h3>
+                            <p>Mobile detailing can be done in most locations, such as your home, workplace, or parking lots as long as there is enough space for our team to work around. For locations outside the Beaumont Region there may be an additional travel fee.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>What is Mobile Detailing?</h3>
+                            <p>Mobile detailing is a service where a professional detailer cleans and restores a vehicle using specialized equipment & products.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Do you offer same-day or emergency services?</h3>
+                            <p>Yes if our availability accepts it! We definitely do!</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Are there any vehicles you don't detail?</h3>
+                            <p>Our mobile detailing company covers all types of trucks, SUVs, sedans, & luxury cars.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
+        <!-- Promotions Section -->
+        <section class="promotions-section">
+            <div class="container">
+                <div class="promotions-container">
+                    <div class="promotion-item">
+                        <img src="images/carr1.JPG" alt="Car Image 1" class="promotion-image">
+                        <h2>FREE ADD-ONS</h2>
+                        <p>When you book your Appointment and the service is more than $260 you get a FREE ADD ON of YOUR CHOICE!</p>
+                    </div>
+                    <div class="promotion-item">
+                        <img src="images/carr2.jpg" alt="Car Image 2" class="promotion-image">
+                        <h2>PUNCH CARD</h2>
+                        <p>When you make your first purchase, you receive a punch card. This card has 10 designated spots for punches. Each time you book an appointment you receive a punch. After 10 washes you get a FREE Detailing Wash!</p>
+                    </div>
+                    <div class="promotion-item">
+                        <img src="images/exterior.jpg" alt="Car Exterior" class="promotion-image">
+                        <img src="images/full-detail.jpg" alt="Full Detail" class="promotion-image">
+                        <p>For more information please scroll up and visit our "BOOK" page on the top right corner.</p>
+                    </div>
+                    <div class="promotion-item referral-section">
+                        <div class="video-background">
+                            <video autoplay loop muted playsinline>
+                                <source src="Videos/car25.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="referral-content">
+                            <img src="images/carr1.JPG" alt="Car Image 1" class="promotion-image">
+                            <h2>REFERRAL BONUS</h2>
+                            <p>If you refer us to any friends, family, co-workers etc. Your next wash will be discounted 10% OFF! The new customer MUST book a service with us and give your name in order for you to retrieve the discount.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-<script>
-    // This script will dynamically load the footer from footer.html
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
+</body>
+</html>
