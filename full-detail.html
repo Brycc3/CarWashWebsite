@@ -1,55 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Transformed - Brycc's Car Wash</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Detail Package Refined - Brycc's Car Wash</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Specific styles for full-detail.html */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .detail-page {
+            display: flex;
+            gap: 40px;
+            padding: 80px 40px; /* Extra padding for spacious feel */
+            align-items: flex-start; /* Align items at the top */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .detail-video {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align video at the top */
+        }
+
+        .detail-video video {
+            width: 100%;
+            max-width: 600px; /* Larger video size */
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            object-fit: cover;
+        }
+
+        .detail-text {
+            flex: 1;
+            padding: 20px;
+            text-align: left; /* Left-align all text */
+        }
+
+        .detail-text h1 {
+            font-size: 36px;
+            margin: 0 0 10px 0; /* Tighten spacing */
+            color: #000000; /* Black text */
+            line-height: 1.2;
+        }
+
+        .detail-text h4 {
+            font-size: 24px;
+            color: #000000; /* Black price */
+            font-weight: normal; /* Normal weight */
+            margin: 0 0 20px 0;
+        }
+
+        .detail-text p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0 0 20px 0;
+            color: #333333; /* Dark gray for readability */
+        }
+
+        .detail-text .service-list {
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .detail-text .service-list div {
+            margin-bottom: 10px; /* Spacing between list items */
+        }
+
+        /* Ensure footer stays at bottom */
+        .content {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            });
+    </script>
 
-  <section class="detail-page">
-    <div class="detail-video">
-      <video controls autoplay loop muted>
-        <source src="videos/transformed.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <!-- Main Content -->
+    <div class="content">
+        <section class="detail-page">
+            <div class="detail-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/full-detail.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="detail-text">
+                <h1>Full Detail Package Refined</h1>
+                <h4>$175</h4>
+                <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish.</p>
+                <div class="service-list">
+                    <div>Transformed detailing package included</div>
+                    <div>Water spot removal</div>
+                    <div>Carpet and upholstery shampooing</div>
+                    <div>Leather conditioning and treatment</div>
+                </div>
+                <p><strong>We Come to You!</strong></p>
+                <p><strong>Contact us</strong> now to book or request a quote.</p>
+            </div>
+        </section>
     </div>
-    <div class="detail-text">
-      <h2>Transformed (Most Popular)</h2>
-      <h4>$100 - Premium Detailing & Wax</h4>
-      <p>Thorough cleaning and detailing, complete with professional waxing, for a polished and pristine appearance.</p>
-      <ul>
-        <li>Purified detailing package included</li>
-        <li>Paint protectant wax</li>
-        <li>Steam cleaning</li>
-        <li>Air vent blowout</li>
-      </ul>
-      <p><strong>We Come to You!</strong></p>
-      <p><strong>Contact us</strong> now to book or request a quote.</p>
-    </div>
-  </section>
-  <!-- Include Header -->
-<div id="header-placeholder"></div>
 
-<script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
-        });
-</script>
-
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            });
+    </script>
 </body>
 </html>
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
-
-<script>
-    // This script will dynamically load the footer from footer.html
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>
-
