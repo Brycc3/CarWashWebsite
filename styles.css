@@ -274,32 +274,68 @@ footer {
     flex-wrap: nowrap; /* Prevent stacking */
 }
 
+/* Services Row */
+.services-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* Service Card */
 .service-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 30%;
+    width: 48%; /* Increase width for larger cards */
     text-align: center;
-    border: 1px solid #ccc;
+    border: none;
     padding: 15px;
     text-decoration: none;
     color: inherit;
-    box-sizing: border-box;
     transition: transform 0.2s;
+    background-color: transparent;
 }
 
 .service-card:hover {
     transform: scale(1.05);
 }
 
-.service-card video, .service-card img {
+/* Service Card Video */
+.service-card video {
     width: 100%;
-    height: 250px;
-    border-radius: 5px;
+    height: 350px; /* Height adjusted for rectangular look */
     object-fit: cover;
+    border-radius: 12px;
 }
 
-  
+/* Make sure videos fill their containers */
+.service-card video {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #333;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 1200px) {
+    .service-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        width: 100%;
+    }
+
+    .service-card video {
+        height: 250px;
+    }
+}
+
   .service-card img {
     width: 100%;
     height: auto;
@@ -475,61 +511,64 @@ body {
 
 /* Footer Styling */
 .footer {
+    background: black;
+    color: white;
+    padding: 60px 20px;
     display: flex;
-    justify-content: flex-start; /* Aligns content to the left */
-    align-items: center; /* Centers items vertically */
-    padding: 20px;
-    background-color: #000; /* Adjust to your footer's background color */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
     width: 100%;
     position: relative;
-    margin-top: auto;
 }
 
-
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Spaces the columns evenly */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
 
 .footer-column {
     flex: 1;
-    min-width: 280px;
-    padding: 20px;
+    padding: 0 20px;
+    min-width: 250px; /* Ensures the columns don't get too narrow */
+    text-align: left; /* Aligns all text to the left */
 }
 
-.footer h3 {
+.footer-column h3, .footer-column h4 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.footer p, .footer a {
+.footer-column p, .footer-column a {
     color: white;
     text-decoration: none;
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.footer a:hover {
+.footer-column a:hover {
     text-decoration: underline;
 }
 
-/* Social Icons */
 .social-icons {
     display: flex;
-    justify-content: center; /* Center the logo */
     align-items: center;
-    gap: 15px; /* Add some space between icons */
-    margin-top: 15px;
+    gap: 10px;
 }
-
 
 .social-icons img {
     width: 25px;
     height: 25px;
-    margin-right: 10px;
 }
 
 .email-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
 }
 
 .email-form input {
