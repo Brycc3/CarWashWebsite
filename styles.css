@@ -511,12 +511,15 @@ body {
     text-decoration: underline;
 }
 
+/* Social Icons */
 .social-icons {
     display: flex;
-    justify-content: flex-start; /* Aligns to the left */
+    justify-content: center; /* Center the logo */
     align-items: center;
+    gap: 15px; /* Add some space between icons */
     margin-top: 15px;
 }
+
 
 .social-icons img {
     width: 25px;
@@ -676,6 +679,15 @@ body {
     object-fit: cover;
 }
 
+/* Video Styling */
+.service-card video {
+    width: 350px; /* Make the videos a bit bigger */
+    height: 300px;
+    border: none; /* Remove white border */
+    background-color: black; /* Add a black background if needed */
+    border-radius: 10px;
+    object-fit: cover;
+}
 
 
 
