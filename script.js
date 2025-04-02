@@ -103,5 +103,18 @@ function toggleDetails(id) {
       }
     });
   }
+// Array of video filenames
+const videos = ["videos/vid1.MP4", "videos/vid2.MP4", "videos/vid3.MP4", "videos/vid4.MP4"];
+let videoIndex = 0;
+const videoElement = document.getElementById('hero-video');
+
+// Automatically switch videos every 10 seconds
+function changeVideo() {
+    videoIndex = (videoIndex + 1) % videos.length;
+    videoElement.src = videos[videoIndex];
+    videoElement.play();
+}
+
+setInterval(changeVideo, 10000); // Change video every 10 seconds
   
 

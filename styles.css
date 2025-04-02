@@ -7,6 +7,19 @@ body {
     color: white;
     text-align: center;
 }
+/* Intro Video Styling */
+.intro-video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#intro-video {
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
 /* Buttons */
 .btn {
@@ -74,12 +87,18 @@ nav {
     font-weight: bold;
 }
 
+/* Ensure the body and html take full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 /* Hero Section - Fullscreen Video */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh; /* Fullscreen height */
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -93,29 +112,90 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    object-fit: cover; /* Ensures video fills the space without distortion */
+    z-index: -1; /* Places video behind overlay and nav */
 }
 
 /* Hero Text Overlay */
 .hero-overlay {
-    position: absolute;
+    position: relative; /* Changed from absolute to work with nav */
+    z-index: 1;
     background: rgba(0, 0, 0, 0.6);
     padding: 30px;
     border-radius: 10px;
+    color: white;
 }
 
 .hero-overlay h1 {
-    font-size: 42px;
-    color: white;
+    font-size: 48px;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 .hero-overlay p {
     font-size: 20px;
-    color: white;
     margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+    background: #FFD700; /* Gold */
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero-overlay .btn:hover {
+    background: darkred;
+    color: white;
+}
+
+/* Navigation Bar - Positioned above video */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    padding: 20px 0;
+    z-index: 1000; /* Ensures it stays above video */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo {
+    color: #000; /* Black text for white background */
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #000; /* Black text for white background */
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: gold;
+}
+
+/* Override your body background from styles.css */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff; /* White background as per your inline style */
+    color: #000000; /* Black text */
 }
 
 /* Call-to-Action Button */
@@ -225,6 +305,47 @@ footer {
     transform: translate(-50%, -50%);
 }
 
+
+
+/* Text Overlay Styling */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.hero-overlay h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.hero-overlay p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.hero-overlay .btn {
+    background-color: #FFD700; /* Gold */
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-overlay .btn:hover {
+    background-color: darkred;
+    color: white;
+}
+
 /* Sections */
 .commitment, .team, .story, .why-choose-us, .contact-info {
     padding: 2rem;
@@ -240,11 +361,13 @@ footer {
 .why-choose-us li {
     margin: 0.5rem 0;
 }
-.team-member img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+.team-grid img, .team-member img {
+    width: 200px; /* Make the image width a fixed value */
+    height: 200px; /* Match height to width for a square shape */
+    object-fit: cover; /* Keeps the image proportionate while fitting within the square */
+    border-radius: 10px; /* Rounded corners */
 }
+
 .location-section {
     display: flex;
     justify-content: space-between;
@@ -283,29 +406,37 @@ footer {
     padding: 30px;
 }
 
+/* Service Card */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Makes them large rectangles */
+    text-align: center;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+    background-color: transparent;
+}
 
 .service-card:hover {
     transform: scale(1.05);
 }
 
-/* Service Card Video */
-.service-card video {
+/* Service Image */
+.service-image {
     width: 100%;
-    height: 350px; /* Height adjusted for rectangular look */
+    height: 400px; /* Makes them rectangular */
     object-fit: cover;
     border-radius: 12px;
-}
-
-/* Make sure videos fill their containers */
-.service-card video {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 10px;
     border: 2px solid #333;
+    transition: transform 0.2s;
 }
 
-/* Responsive Adjustment */
+/* Mobile Responsive Adjustment */
 @media (max-width: 1200px) {
     .service-card {
         width: 48%;
@@ -316,6 +447,12 @@ footer {
     .service-card {
         width: 100%;
     }
+
+    .service-image {
+        height: 300px;
+    }
+}
+
 
     .service-card video {
         height: 250px;
@@ -711,6 +848,83 @@ body {
     border-radius: 10px;
     object-fit: cover;
 }
+/* Fixing Checkbox Alignment */
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures checkboxes and labels are aligned left */
+    gap: 10px;
+    margin-top: 20px; /* Adds spacing above the section */
+}
 
+.checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+/* Ensuring the checkboxes themselves are styled correctly */
+.checkboxes input[type="checkbox"] {
+    margin-right: 10px; /* Adds space between checkbox and label text */
+}
+
+/* Hero Section - Fullscreen Video */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the space without distortion */
+    z-index: -1; /* Places video behind overlay and nav */
+}
+
+/* Hero Text Overlay */
+.hero-overlay {
+    position: relative; /* Changed from absolute to work with nav */
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-overlay p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-overlay .btn {
+    background: #FFD700; /* Gold */
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero-overlay .btn:hover {
+    background: darkred;
+    color: white;
+}
 
   

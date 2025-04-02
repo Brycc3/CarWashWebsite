@@ -22,8 +22,8 @@
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff; /* White background */
-            color: #000000; /* Black text */
+            background-color: #ffffff;
+            color: #000000;
         }
         
         /* Section Layout */
@@ -48,56 +48,9 @@
 
         .video-grid video {
             width: 30%;
-            height: 200px; /* Ensures all videos have the same height */
-            object-fit: cover; /* Ensures uniform aspect ratio */
+            height: 200px;
+            object-fit: cover;
             border-radius: 10px;
-        }
-
-        /* Team Layout */
-        .team-grid {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-        }
-
-        .team-grid img {
-            width: 250px;
-            border-radius: 10px;
-        }
-
-        /* Service Pricing Layout */
-        .service-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .service-box {
-            background: #ffffff;
-            border-radius: 10px;
-            text-align: center;
-            width: 250px;
-            padding: 15px;
-        }
-        .service-box img {
-            width: 100%;
-            height: 200px; /* Ensures all images are the same height */
-            object-fit: cover; /* Ensures uniform aspect ratio without stretching */
-            border-radius: 10px;
-        }
-
-        .service-box h3, .service-box p {
-            margin: 10px 0;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #808080; /* Grey background for the middle section */
-            color: #000000; /* Black text */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         /* Navigation Bar */
@@ -105,7 +58,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: black; /* Black background for the navigation bar */
+            background: black;
             padding: 20px 0;
             z-index: 1000;
             text-align: center;
@@ -145,25 +98,15 @@
         }
 
         .content {
-            flex: 1; /* Pushes the footer down */
-            padding-top: 100px; /* Prevents content from being hidden under the navbar */
+            flex: 1;
+            padding-top: 100px;
         }
 
         .services-section {
-            background-color: #808080; /* Grey background for the services */
+            background-color: #808080;
             padding: 50px 20px;
         }
 
-        .services-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        /* Services Row */
         .services-row {
             display: flex;
             justify-content: space-between;
@@ -172,49 +115,53 @@
             padding: 30px;
         }
 
-        /* Service Card */
         .service-card {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 32%; /* Adjusted to fit more cleanly */
+            width: 32%;
             text-align: center;
-            border: none; /* Removed white border */
+            border: none;
             padding: 10px;
             text-decoration: none;
             color: inherit;
             transition: transform 0.2s;
-            background-color: transparent; /* To avoid the white box */
+            background-color: transparent;
         }
 
         .service-card:hover {
             transform: scale(1.05);
         }
 
-        .service-card img {
+        .service-card video {
             width: 100%;
-            height: auto;
-            border-radius: 5px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
         }
 
-        .addons {
-            display: flex;
-            justify-content: space-between;
+        /* New Service Description Section */
+        .service-description {
             max-width: 800px;
-            margin: 50px auto;
-            flex-wrap: wrap;
+            margin: 40px auto;
+            background: #f3f3f3;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
         }
 
-        .addon-group {
-            display: flex;
-            flex-direction: column;
-            width: 30%;
-            text-align: left;
+        .service-description h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #000;
+            font-weight: 600;
         }
 
-        .addon-item {
-            display: flex;
-            justify-content: space-between;
+        .service-description p {
+            margin: 0;
         }
 
         /* Footer */
@@ -224,8 +171,22 @@
             padding: 60px 20px;
             text-align: center;
             width: 100%;
-            position: relative; /* Ensures it stays at the bottom */
+            position: relative;
             margin-top: auto;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+            }
+            .service-card video {
+                height: 250px;
+            }
+            .service-description {
+                font-size: 16px;
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -241,37 +202,35 @@
     </script>
 
     <!-- Main Content Wrapper -->
-    <div class="content"> <!-- This is important to push footer down -->
+    <div class="content">
         
         <!-- Services Section -->
         <section class="services-section">
             <div class="services-row">
                 <!-- Purified Wash Card -->
                 <a class="service-card" href="purified.html">
-                    <video autoplay muted loop playsinline>
-                        <source src="videos/purified.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <h3> Purified Wash starting at: $80-120 </h3>
+                    <img src="images/carr5.jpg" alt="Purified Wash" class="service-image">
+                    <h3>Purified Wash: $80-120</h3>
                 </a>
         
                 <!-- Transformed Card -->
                 <a class="service-card" href="transformed.html">
-                    <video autoplay muted loop playsinline>
-                        <source src="videos/transformed.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <h3>Transformed Wash starting at: $130-160</h3>
+                    <img src="images/carr6.jpg" alt="Transformed Wash" class="service-image">
+                    <h3>Transformed Wash: $130-160</h3>
                 </a>
         
                 <!-- Refined Card -->
                 <a class="service-card" href="full-detail.html">
-                    <video autoplay muted loop playsinline>
-                        <source src="videos/full-detail.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <h3>Full Detail Package Refined starting at: $175-230</h3>
+                    <img src="images/carr2.jpg" alt="Refined Wash" class="service-image">
+                    <h3>Full Detail Package Refined: $175-230</h3>
                 </a>
+            </div>
+        </section>
+        
+            <!-- New Service Description -->
+            <div class="service-description">
+                <h2>Our Commitment to You</h2>
+                <p>At Refining Auto Detailing, we’re not just here for business—we’re here to serve. Our goal is to provide high-quality detailing at fair prices, not to overcharge. Prices may vary depending on your vehicle’s condition, but we’re happy to work with you to find the best service within your budget. Contact us for a personalized quote—we’re here to help you get the care your car deserves.</p>
             </div>
         </section>
     </div>
