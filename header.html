@@ -1,60 +1,25 @@
-<!-- header.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        nav {
-            background: #ffffff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 2px;
-            color: #000000;
-        }
-        .nav-links a {
-            margin-left: 30px;
-            text-decoration: none;
-            color: #000000;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-        }
-        .nav-links a:hover {
-            color: #007bff;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">RefiningAutoDetail</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Book</a>
-                <a href="faqs.html">FAQs</a>
-            </div>
+<!-- header.html — shared navigation (injected into #header-placeholder) -->
+<nav class="site-nav">
+    <div class="nav-container">
+        <a href="index.html" class="logo">REFINING<span class="logo-accent">AUTO</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="faqs.html">FAQs</a>
+            <a href="contact.html" class="btn" style="padding:0.6em 1.4em;font-size:0.9rem;">Book Now</a>
         </div>
-    </nav>
-</body>
-</html>
+    </div>
+</nav>
+
+<!-- Mobile quick-action bar (shows only on phones) -->
+<div class="mobile-actionbar" aria-label="Quick actions">
+    <a href="tel:+16626161502" class="mobile-actionbar__call">
+        <span aria-hidden="true">&#9742;</span> Call
+    </a>
+    <a href="contact.html" class="mobile-actionbar__book">Book Now</a>
+</div>

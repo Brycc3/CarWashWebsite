@@ -1,53 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Full Detail Package Refined - Brycc's Car Wash</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Detail — Refined | Refining Auto Detailing</title>
+    <meta name="description" content="The Refined full detail package — advanced techniques and premium products for a showroom-worthy finish.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.refiningautodetailing.com/refined.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Refining Auto Detailing">
+    <meta property="og:title" content="Full Detail — Refined | Refining Auto Detailing">
+    <meta property="og:description" content="The Refined full detail package — advanced techniques and premium products for a showroom-worthy finish.">
+    <meta property="og:url" content="https://www.refiningautodetailing.com/refined.html">
+    <meta property="og:image" content="https://www.refiningautodetailing.com/images/carr2.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0b0d12">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <section class="detail-page">
-    <div class="detail-video">
-      <video controls autoplay loop muted>
-        <source src="videos/refined.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="detail-text">
-      <h2>Full Detail Package Refined</h2>
-      <h4>$175 - Showroom Finish Detailing</h4>
-      <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish.</p>
-      <ul>
-        <li>Transformed detailing package included</li>
-        <li>Water spot removal</li>
-        <li>Carpet and upholstery shampooing</li>
-        <li>Leather conditioning and treatment</li>
-      </ul>
-      <p><strong>We Come to You!</strong></p>
-      <p><strong>Contact us</strong> now to book or request a quote.</p>
-    </div>
-  </section>
-  <!-- Include Header -->
-<div id="header-placeholder"></div>
-
-<script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header-placeholder").innerHTML = data;
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch("header.html").then(r => r.text()).then(d => {
+            document.getElementById("header-placeholder").innerHTML = d;
         });
-</script>
+    </script>
 
+    <div class="content">
+        <section class="detail-page">
+            <div class="detail-media reveal">
+                <img src="images/carr2.jpg" alt="Full Detail Refined">
+            </div>
+            <div class="detail-text reveal">
+                <span class="eyebrow">Premium Finish</span>
+                <h1>Full Detail — Refined</h1>
+                <p class="price">$175 — Showroom Finish Detailing</p>
+                <p>The ultimate luxury treatment incorporates advanced auto detailing techniques and premium products to provide your vehicle with a showroom-worthy finish.</p>
+                <ul class="feature-list">
+                    <li>Transformed detailing package included</li>
+                    <li>Water spot removal</li>
+                    <li>Carpet and upholstery shampooing</li>
+                    <li>Leather conditioning and treatment</li>
+                </ul>
+                <p style="margin-top:1.5rem;"><strong>We come to you!</strong> Contact us now to book or request a quote.</p>
+                <div style="margin-top:1.5rem;">
+                    <a href="contact.html" class="btn">Book This Package</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html").then(r => r.text()).then(d => {
+            document.getElementById("footer-placeholder").innerHTML = d;
+        });
+    </script>
 </body>
 </html>
-<!-- Include Footer -->
-<div id="footer-placeholder"></div>
-
-<script>
-    // This script will dynamically load the footer from footer.html
-    fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        });
-</script>

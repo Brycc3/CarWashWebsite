@@ -1,0 +1,7 @@
+# robots.txt for Refining Auto Detailing
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# TODO: Replace the domain below with your real domain once live.
+Sitemap: https://www.refiningautodetailing.com/sitemap.xml

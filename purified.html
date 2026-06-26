@@ -3,116 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purified Wash - Car Wash Website</title>
+    <title>Purified Wash | Refining Auto Detailing</title>
+    <meta name="description" content="The Purified Wash — a quick, effective clean that leaves your vehicle sparkling.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.refiningautodetailing.com/purified.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Refining Auto Detailing">
+    <meta property="og:title" content="Purified Wash | Refining Auto Detailing">
+    <meta property="og:description" content="The Purified Wash — a quick, effective clean that leaves your vehicle sparkling.">
+    <meta property="og:url" content="https://www.refiningautodetailing.com/purified.html">
+    <meta property="og:image" content="https://www.refiningautodetailing.com/images/carr5.JPG">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#0b0d12">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <style>
-        /* Specific styles for purified.html */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff; /* White background */
-            color: #000000; /* Black text */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        .detail-page {
-            display: flex;
-            gap: 40px;
-            padding: 80px 40px; /* Extra padding for spacious feel */
-            align-items: flex-start; /* Align items at the top */
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .detail-video {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align video at the top */
-        }
-
-        .detail-video video {
-            width: 100%;
-            max-width: 600px; /* Larger video size */
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            object-fit: cover;
-        }
-
-        .detail-text {
-            flex: 1;
-            padding: 20px;
-            text-align: left; /* Left-align all text */
-        }
-
-        .detail-text h1 {
-            font-size: 36px;
-            margin: 0 0 10px 0; /* Tighten spacing */
-            color: #000000; /* Black text */
-            line-height: 1.2;
-        }
-
-        .detail-text h4 {
-            font-size: 24px;
-            color: #000000; /* Black price */
-            font-weight: normal; /* Normal weight */
-            margin: 0 0 20px 0;
-        }
-
-        .detail-text p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 0 0 20px 0;
-            color: #333333; /* Dark gray for readability */
-        }
-
-        .detail-text .service-list {
-            font-size: 16px;
-            color: #333333;
-            line-height: 1.8;
-            margin: 0;
-        }
-
-        .detail-text .service-list div {
-            margin-bottom: 10px; /* Spacing between list items */
-        }
-
-        /* Ensure footer stays at bottom */
-        .content {
-            flex-grow: 1;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
     <div id="header-placeholder"></div>
     <script>
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-placeholder").innerHTML = data;
-            });
+        fetch("header.html").then(r => r.text()).then(d => {
+            document.getElementById("header-placeholder").innerHTML = d;
+        });
     </script>
 
-    <!-- Main Content -->
     <div class="content">
         <section class="detail-page">
-            <div class="detail-video">
-                <img src="images/carr5.jpg" alt="Purified Wash" class="service-image">
+            <div class="detail-media reveal">
+                <img src="images/carr5.JPG" alt="Purified Wash">
             </div>
-            <div class="detail-text">
+            <div class="detail-text reveal">
+                <span class="eyebrow">Essential Clean</span>
                 <h1>Purified Wash</h1>
-                <p>Our Purified Wash is the perfect choice for a quick, effective clean that leaves your vehicle sparkling. Using top-quality products, this basic package ensures your car gets the care it deserves without breaking the bank.</p>
-                <div class="service-list">
-                    <div>Exterior hand wash</div>
-                    <div>Wheel and tire cleaning</div>
-                    <div>Window cleaning (inside and out)</div>
-                    <div>Quick vacuum of interior</div>
-                    <div>Towel dry for a streak-free finish</div>
+                <p>Our Purified Wash is the perfect choice for a quick, effective clean that leaves your vehicle sparkling. Using top-quality products, this package ensures your car gets the care it deserves without breaking the bank.</p>
+                <ul class="feature-list">
+                    <li>Exterior hand wash</li>
+                    <li>Wheel and tire cleaning</li>
+                    <li>Window cleaning (inside and out)</li>
+                    <li>Quick vacuum of interior</li>
+                    <li>Towel dry for a streak-free finish</li>
+                </ul>
+                <div style="margin-top:2rem;">
+                    <a href="contact.html" class="btn">Book This Package</a>
                 </div>
             </div>
         </section>
@@ -121,11 +58,9 @@
     <!-- Footer -->
     <div id="footer-placeholder"></div>
     <script>
-        fetch("footer.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("footer-placeholder").innerHTML = data;
-            });
+        fetch("footer.html").then(r => r.text()).then(d => {
+            document.getElementById("footer-placeholder").innerHTML = d;
+        });
     </script>
 </body>
 </html>

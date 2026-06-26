@@ -1,0 +1,13 @@
+{
+  "name": "Refining Auto Detailing",
+  "short_name": "Refining Auto",
+  "description": "Premium mobile car detailing in Beaumont, Texas.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
