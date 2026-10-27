@@ -920,95 +920,65 @@ textarea { resize: vertical; min-height: 120px; }
     transform: none;
 }
 
-/* ---------- Intro car animation ---------- */
-.intro-overlay {
+/* ---------- Photographic wheel intro ---------- */
+.wheel-intro {
+    --intro-progress: 0;
+    --intro-label-opacity: 1;
     position: fixed;
     inset: 0;
     z-index: 4000;
-    display: grid;
-    place-items: center;
     overflow: hidden;
-    background:
-        radial-gradient(120% 120% at 50% 40%, #1b1f27 0%, #0b0d12 70%);
-    transition: opacity 0.6s var(--ease), visibility 0.6s var(--ease);
-}
-.intro-overlay.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-.intro-road {
-    position: absolute;
-    bottom: 28%;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
-}
-.intro-road::before {
-    content: "";
-    position: absolute;
-    top: 18px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0 40px, transparent 40px 80px);
-    background-size: 80px 2px;
-    animation: road-dash 0.5s linear infinite;
-}
-@keyframes road-dash {
-    to { background-position: -80px 0; }
-}
-.intro-car {
-    position: relative;
-    width: min(360px, 60vw);
-    z-index: 2;
-    animation: car-zoom 2.4s cubic-bezier(0.5, 0, 0.2, 1) forwards;
-    filter: drop-shadow(0 18px 22px rgba(0, 0, 0, 0.55));
-}
-.intro-car .wheel { transform-box: fill-box; transform-origin: center; animation: spin 0.25s linear infinite; }
-.intro-brand {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background: #080a0e;
     color: #fff;
-    text-align: center;
-    z-index: 1;
-    opacity: 0;
-    animation: brand-in 0.8s var(--ease) 1.6s forwards;
+    isolation: isolate;
 }
-.intro-brand .logo { color: #fff; font-size: clamp(1.4rem, 4vw, 2.2rem); justify-content: center; }
-.intro-brand p { color: var(--accent); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.8rem; margin: 8px 0 0; }
-.speedline {
+.wheel-intro__scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wheel-intro__shade {
     position: absolute;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7));
-    opacity: 0;
-    animation: streak 0.6s ease-out forwards;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 55%, transparent 25%, rgba(8,10,14,.25) 56%, #080a0e 90%),
+        linear-gradient(180deg, #080a0e 3%, transparent 37%, transparent 70%, #080a0e 98%);
 }
+.wheel-intro__brand { position: absolute; top: max(8%, 46px); width: 100%; padding: 0 22px; text-align: center; opacity: var(--intro-label-opacity); }
+.wheel-intro__eyebrow { color: #d4af37; font-size: clamp(.55rem, 1.4vw, .7rem); letter-spacing: .3em; }
+.wheel-intro__title { margin-top: 16px; font-size: clamp(1.65rem, 4vw, 3.5rem); font-weight: 700; letter-spacing: .05em; line-height: 1.2; }
+.wheel-intro__title span { color: #d4af37; }
+.wheel-intro__brand p { color: #b8bcc4; font-size: .85rem; margin-top: 10px; }
+.wheel-intro__skip {
+    position: absolute; z-index: 2; right: 24px; bottom: max(70px, env(safe-area-inset-bottom));
+    border: 1px solid #72757b; border-radius: 30px; padding: 12px 20px;
+    background: #11151c; color: #fff; font: inherit; font-size: .8rem; cursor: pointer;
+}
+.wheel-intro__skip span { margin-left: 18px; color: #d4af37; }
+.wheel-intro__skip:focus-visible { outline: 2px solid #d4af37; outline-offset: 5px; }
+.wheel-intro__caption { position: absolute; bottom: 28px; left: 24px; right: 24px; display: flex; justify-content: space-between; gap: 16px; font-size: .6rem; letter-spacing: .2em; color: #b8bcc4; opacity: var(--intro-label-opacity); }
+.wheel-intro__progress { position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; background: #d4af37; transform-origin: left; transform: scaleX(var(--intro-progress)); }
 
-@keyframes car-zoom {
-    0%   { transform: translateX(-120vw) scaleX(1); }
-    55%  { transform: translateX(0) scaleX(1); }
-    70%  { transform: translateX(0) scaleX(1); }
-    100% { transform: translateX(125vw) scaleX(1); }
+/* Depth follows the pointer only on devices with a precise hover pointer. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .depth-card { transform-style: preserve-3d; }
+    .depth-card.is-visible:hover,
+    .depth-card:not(.reveal):hover {
+        transform: perspective(950px) rotateX(var(--depth-x, 0deg)) rotateY(var(--depth-y, 0deg)) translateY(-7px);
+        box-shadow: 0 24px 48px rgba(13,18,28,.24);
+        transition: transform 100ms ease-out, box-shadow 300ms ease;
+    }
+    .depth-card { position: relative; }
+    .depth-card::before {
+        content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+        border-radius: inherit; opacity: 0; transition: opacity 300ms ease;
+        background: radial-gradient(circle at var(--shine-x, 50%) var(--shine-y, 50%), rgba(255,239,186,.2), transparent 65%);
+    }
+    .depth-card:hover::before { opacity: 1; }
+    .hero__media { transform: scale(1.06) translate(var(--hero-x, 0px), var(--hero-y, 0px)); transition: transform 500ms ease-out; }
+    .hero__inner.is-visible { transform: perspective(1100px) rotateX(var(--hero-rx, 0deg)) rotateY(var(--hero-ry, 0deg)); transition: transform 500ms ease-out; }
 }
-@keyframes spin { to { transform: rotate(360deg); } }
-@keyframes brand-in {
-    from { opacity: 0; transform: translate(-50%, -42%); }
-    to   { opacity: 1; transform: translate(-50%, -50%); }
-}
-@keyframes streak {
-    0%   { opacity: 0; transform: translateX(60vw); width: 0; }
-    40%  { opacity: 1; width: 22vw; }
-    100% { opacity: 0; transform: translateX(-80vw); width: 30vw; }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .intro-car, .intro-car .wheel, .intro-road::before, .speedline, .intro-brand { animation: none; }
     .reveal { opacity: 1; transform: none; transition: none; }
     html { scroll-behavior: auto; }
+    .card, .service-card, .testimonial, .card__media, .service-card img, .team-member img, .btn { transition: none; }
+    .card:hover, .service-card:hover, .testimonial:hover, .card:hover .card__media, .service-card:hover img, .team-member:hover img, .btn:hover { transform: none; }
 }
 
 /* ---------- Dark feature section ---------- */
