@@ -318,3 +318,52 @@ function initLightbox(gallery) {
         if (e.key === "ArrowLeft") prev();
     });
 }
+
+
+/* Water-rinse transitions for internal page navigation */
+(function waterPageTransitions() {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const createOverlay = (entering) => {
+        const overlay = document.createElement("div");
+        overlay.className = "water-transition " + (entering ? "is-entering" : "is-exiting");
+        overlay.setAttribute("aria-hidden", "true");
+        const bubbles = Array.from({ length: 9 }, (_, i) => {
+            const x = 5 + i * 11;
+            const size = 14 + (i % 4) * 9;
+            const y = 18 + (i % 5) * 14;
+            const delay = (i % 4) * 55;
+            return '<i style="--x:' + x + '%;--size:' + size + 'px;--y:' + y + '%;--delay:' + delay + 'ms"></i>';
+        }).join("");
+        overlay.innerHTML = '<div class="water-transition__hose"></div><div class="water-transition__spray"></div><div class="water-transition__bubbles">' + bubbles + '</div>';
+        return overlay;
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        let enteredAt = 0;
+        try {
+            enteredAt = Number(sessionStorage.getItem("refining-water-entry") || 0);
+            sessionStorage.removeItem("refining-water-entry");
+        } catch (_) {}
+        if (!enteredAt || Date.now() - enteredAt > 1800 || reducedMotion.matches) return;
+        document.body.appendChild(createOverlay(true));
+        document.body.classList.add("page-entering");
+        window.setTimeout(() => {
+            document.querySelector(".water-transition.is-entering")?.remove();
+            document.body.classList.remove("page-entering");
+        }, 760);
+    });
+
+    document.addEventListener("click", event => {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || reducedMotion.matches) return;
+        const link = event.target.closest("a[href]");
+        if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+        let destination;
+        try { destination = new URL(link.href, location.href); } catch (_) { return; }
+        if (destination.origin !== location.origin || destination.pathname === location.pathname) return;
+        event.preventDefault();
+        document.querySelector(".water-transition")?.remove();
+        document.body.appendChild(createOverlay(false));
+        try { sessionStorage.setItem("refining-water-entry", String(Date.now())); } catch (_) {}
+        window.setTimeout(() => { location.assign(destination.href); }, 560);
+    });
+})();
